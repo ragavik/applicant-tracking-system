@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails Recruiting and Applicant Tracking System: production" uuid="7ca410ea-2bd1-46fb-94a7-3fafcfc0cfd4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>Recruiting_and_Applicant_Tracking_System</user-name>
+    </data-source>
+    <data-source name="Rails Recruiting and Applicant Tracking System: development" uuid="20e8d41a-0861-4b51-bf58-0aa3a2ae7cde">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails Recruiting and Applicant Tracking System: test" uuid="cb3dbf98-bfaf-4242-835f-02e3a409ca7b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>
