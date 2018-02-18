@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Currentcompany:</strong>
+  <%= @application.currentCompany %>
+</p>
+
+<p>
+  <strong>Linkedinurl:</strong>
+  <%= @application.linkedInURL %>
+</p>
+
+<p>
+  <strong>Portfoliourl:</strong>
+  <%= @application.portfolioURL %>
+</p>
+
+<p>
+  <strong>Additionalinfo:</strong>
+  <%= @application.additionalInfo %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @application.gender %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @application.race %>
+</p>
+
+<p>
+  <strong>Veteranstatus:</strong>
+  <%= @application.veteranStatus %>
+</p>
+
+<p>
+  <strong>Disabilitystatus:</strong>
+  <%= @application.disabilityStatus %>
+</p>
+
+<p>
+  <strong>Resume:</strong>
+  <%= @application.resume %>
+</p>
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>

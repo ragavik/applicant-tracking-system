@@ -1,0 +1,62 @@
+<%= form_with(model: application, local: true) do |form| %>
+  <% if application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</h2>
+
+      <ul>
+      <% application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :currentCompany %>
+    <%= form.text_field :currentCompany, id: :application_currentCompany %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedInURL %>
+    <%= form.text_field :linkedInURL, id: :application_linkedInURL %>
+  </div>
+
+  <div class="field">
+    <%= form.label :portfolioURL %>
+    <%= form.text_field :portfolioURL, id: :application_portfolioURL %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additionalInfo %>
+    <%= form.text_area :additionalInfo, id: :application_additionalInfo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :application_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :race %>
+    <%= form.text_field :race, id: :application_race %>
+  </div>
+
+  <div class="field">
+    <%= form.label :veteranStatus %>
+    <%= form.text_field :veteranStatus, id: :application_veteranStatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disabilityStatus %>
+    <%= form.text_field :disabilityStatus, id: :application_disabilityStatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :resume %>
+    <%= form.text_field :resume, id: :application_resume %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
