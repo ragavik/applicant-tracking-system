@@ -26,6 +26,9 @@
     <%= form.text_field :password, id: :recruiter_password %>
   </div>
 
+  <%= form.label :company_id %>
+  <%= select("recruiter", "company_id", Company.all.collect{ |c| [ c.name, c.id] }) %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

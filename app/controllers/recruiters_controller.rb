@@ -69,6 +69,6 @@ class RecruitersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recruiter_params
-      params.require(:recruiter).permit(:name, :email, :password)
+      params.require(:recruiter).permit(:name, :email, :password, :company_id)
     end
 end

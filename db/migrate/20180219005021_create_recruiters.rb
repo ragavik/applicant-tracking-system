@@ -5,7 +5,11 @@ class CreateRecruiters < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :password
 
+      t.references :company
+
       t.timestamps
     end
+
+
   end
 end

@@ -7,6 +7,8 @@ class CreateJobs < ActiveRecord::Migration[5.1]
       t.text :requirements
       t.text :responsibilities
 
+      t.references :company
+
       t.timestamps
     end
   end

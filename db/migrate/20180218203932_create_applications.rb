@@ -11,6 +11,8 @@ class CreateApplications < ActiveRecord::Migration[5.1]
       t.string :disabilityStatus
       t.string :resume
 
+      t.references :job_seeker
+
       t.timestamps
     end
   end
