@@ -57,9 +57,11 @@ ActiveRecord::Schema.define(version: 20180219005230) do
     t.text "requirements"
     t.text "responsibilities"
     t.integer "company_id"
+    t.integer "recruiter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_jobs_on_company_id"
+    t.index ["recruiter_id"], name: "index_jobs_on_recruiter_id"
   end
 
   create_table "recruiters", force: :cascade do |t|
