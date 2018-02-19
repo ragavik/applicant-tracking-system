@@ -1,0 +1,32 @@
+<%= form_with(model: recruiter, local: true) do |form| %>
+  <% if recruiter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recruiter.errors.count, "error") %> prohibited this recruiter from being saved:</h2>
+
+      <ul>
+      <% recruiter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :recruiter_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :recruiter_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :recruiter_password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
