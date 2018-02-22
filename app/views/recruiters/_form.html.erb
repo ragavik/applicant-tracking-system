@@ -4,9 +4,9 @@
       <h2><%= pluralize(recruiter.errors.count, "error") %> prohibited this recruiter from being saved:</h2>
 
       <ul>
-      <% recruiter.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% recruiter.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -15,7 +15,6 @@
     <%= form.label :name %>
     <%= form.text_field :name, id: :recruiter_name %>
   </div>
-
   <%= form.label :company_id %>
   <%= select("recruiter", "company_id", Company.all.collect{ |c| [ c.name, c.id] }) %>
 
