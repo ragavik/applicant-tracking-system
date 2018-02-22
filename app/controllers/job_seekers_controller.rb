@@ -1,6 +1,6 @@
 class JobSeekersController < ApplicationController
   before_action :set_job_seeker, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /job_seekers
   # GET /job_seekers.json
   def index
@@ -14,7 +14,10 @@ class JobSeekersController < ApplicationController
 
   # GET /job_seekers/new
   def new
-    @job_seeker = JobSeeker.new
+    #@job_seeker = JobSeeker.new
+
+    # Change made for devise
+    @job_seeker = current_user.job_seekers.build
   end
 
   # GET /job_seekers/1/edit
@@ -24,7 +27,10 @@ class JobSeekersController < ApplicationController
   # POST /job_seekers
   # POST /job_seekers.json
   def create
-    @job_seeker = JobSeeker.new(job_seeker_params)
+    #@job_seeker = JobSeeker.new(job_seeker_params)
+
+    # change made for devise
+    @job_seeker = current_user.job_seekers.build(job_seeker_params)
 
     respond_to do |format|
       if @job_seeker.save
@@ -69,6 +75,6 @@ class JobSeekersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_seeker_params
-      params.require(:job_seeker).permit(:fullName, :email, :password, :phone)
+      params.require(:job_seeker).permit(:name, :phone)
     end
 end

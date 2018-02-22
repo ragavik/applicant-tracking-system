@@ -9,6 +9,41 @@
   </head>
 
   <body>
+
+  <div align="center">
+  <h1>Recruiting And Applicant Tracking System </h1>
+  </div>
+
+  <!-- Flash messages - part of DEVISE -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <div align="left">
+  <%= link_to "JS Sign Up", new_user_registration_path %>
+  <%= link_to "JS Sign In", new_user_session_path %>
+  <!-- **************If user already signed in then only show sign out option ***********-->
+  <% if user_signed_in? %>
+    <%= link_to "JS Sign Out",destroy_user_session_path, :method => :delete %>
+  <% end %>
+  </div>
+
+  <div align="right">
+  <%= link_to "R Sign Up", new_ruser_registration_path %>
+  <%= link_to "R Sign In", new_ruser_session_path %>
+  <!-- **************If user already signed in then only show sign out option *************-->
+
+  <% if ruser_signed_in? %>
+    <%= link_to "R Sign Out",destroy_ruser_session_path, :method => :delete %>
+  <% end %>
+  </div>
+
+  <br> <br> <br>
+
     <%= yield %>
+  <br> <br> <br>
+
+  <%= link_to "List all Recruiters", recruiters_url %> <%= link_to "Show all Job Seekers", job_seekers_url %>
+  <%= link_to "List all Companies", companies_url %> <%= link_to "List all applications", applications_url %>
+  <%= link_to "List all Jobs", jobs_url %>
   </body>
 </html>

@@ -17,7 +17,7 @@ class JobSeekersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create job_seeker" do
     assert_difference('JobSeeker.count') do
-      post job_seekers_url, params: { job_seeker: { email: @job_seeker.email, fullName: @job_seeker.fullName, password: @job_seeker.password, phone: @job_seeker.phone } }
+      post job_seekers_url, params: { job_seeker: { name: @job_seeker.name, phone: @job_seeker.phone } }
     end
 
     assert_redirected_to job_seeker_url(JobSeeker.last)
@@ -34,7 +34,7 @@ class JobSeekersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update job_seeker" do
-    patch job_seeker_url(@job_seeker), params: { job_seeker: { email: @job_seeker.email, fullName: @job_seeker.fullName, password: @job_seeker.password, phone: @job_seeker.phone } }
+    patch job_seeker_url(@job_seeker), params: { job_seeker: { name: @job_seeker.name, phone: @job_seeker.phone } }
     assert_redirected_to job_seeker_url(@job_seeker)
   end
 

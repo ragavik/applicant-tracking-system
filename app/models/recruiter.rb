@@ -1,6 +1,6 @@
 class Recruiter < ApplicationRecord
+  belongs_to :ruser
   belongs_to :company
-  has_many :jobs
+  validates :name, :presence => true
 
-  validates :company, :presence =>  true
 end

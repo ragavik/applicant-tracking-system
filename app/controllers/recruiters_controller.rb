@@ -1,5 +1,8 @@
 class RecruitersController < ApplicationController
   before_action :set_recruiter, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_ruser!, except: [:index, :show]
+
+  #before_filter :check_for_existing_recruiter, only: [:new, :create]
 
   # GET /recruiters
   # GET /recruiters.json
@@ -14,7 +17,10 @@ class RecruitersController < ApplicationController
 
   # GET /recruiters/new
   def new
-    @recruiter = Recruiter.new
+    #@recruiter = Recruiter.new
+
+    #Change made for devise
+    @recruiter = current_ruser.recruiters.build
   end
 
   # GET /recruiters/1/edit
@@ -24,7 +30,10 @@ class RecruitersController < ApplicationController
   # POST /recruiters
   # POST /recruiters.json
   def create
-    @recruiter = Recruiter.new(recruiter_params)
+    #@recruiter = Recruiter.new(recruiter_params)
+
+    #Change made for devise
+    @recruiter = current_ruser.recruiters.build(recruiter_params)
 
     respond_to do |format|
       if @recruiter.save
@@ -69,6 +78,12 @@ class RecruitersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recruiter_params
-      params.require(:recruiter).permit(:name, :email, :password, :company_id)
+      params.require(:recruiter).permit(:name)
     end
+
+  #def check_for_existing_recruiter
+   # if current_ruser.email
+    #  redirect_to current_ruser.email, notice: 'Some message about already having a profile'
+    #end
+  #end
 end
