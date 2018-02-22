@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :admins
+  devise_for :ausers
   devise_for :rusers
   resources :job_seekers
   resources :recruiters

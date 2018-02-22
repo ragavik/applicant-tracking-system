@@ -27,6 +27,17 @@
   <% end %>
   </div>
 
+  <div align="centre">
+    <%= link_to "A Sign Up", new_auser_registration_path %>
+    <%= link_to "A Sign In", new_auser_session_path %>
+    <!-- **************If user already signed in then only show sign out option *************-->
+
+    <% if auser_signed_in? %>
+      <%= link_to "A Sign Out",destroy_auser_session_path, :method => :delete %>
+    <% end %>
+  </div>
+
+
   <div align="right">
   <%= link_to "R Sign Up", new_ruser_registration_path %>
   <%= link_to "R Sign In", new_ruser_session_path %>
