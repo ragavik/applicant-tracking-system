@@ -9,13 +9,6 @@
   <%= @recruiter.name %>
 </p>
 
-<!--
-<p>
-  <strong>Password:</strong>
-  <%= @recruiter.password %>
-</p>
--->
-
 <br>
 <h3>Take Actions</h3>
 <%= link_to 'Edit My Profile', edit_recruiter_path(@recruiter) %>
@@ -30,9 +23,8 @@
 <br><br>
 <%= link_to 'View Applicants' %>
 <br><br>
-<%= 'Select current company' %>
-<%= select_tag 'Company', options_for_select(Company.all.collect{ |c| [ c.name, c.id] }) %>
-<!-- <%= link_to '<button type="button">Save</button>'.html_safe, new_post_path %> -->
+<!--<%= 'Select current company' %>
+<%= select_tag 'Company', options_for_select(Company.all.collect{ |c| [ c.name, c.id] }) %>-->
 <br><br>
 
 <%= link_to 'Edit', edit_recruiter_path(@recruiter) %> |
