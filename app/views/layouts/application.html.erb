@@ -18,33 +18,37 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <br><br>
   <div align="left">
-  <%= link_to "JS Sign Up", new_user_registration_path %>
-  <%= link_to "JS Sign In", new_user_session_path %>
+  <%= link_to "Sign up as a Job Seeker", new_user_registration_path %>
+  <%= link_to "Sign in as a Job Seeker", new_user_session_path %>
   <!-- **************If user already signed in then only show sign out option ***********-->
   <% if user_signed_in? %>
-    <%= link_to "JS Sign Out",destroy_user_session_path, :method => :delete %>
+    <%= link_to "Sign Out",destroy_user_session_path, :method => :delete %>
   <% end %>
   </div>
 
-  <div align="centre">
+  <div align="left">
+    <!--
     <%= link_to "A Sign Up", new_auser_registration_path %>
-    <%= link_to "A Sign In", new_auser_session_path %>
+     -->
+    <%= link_to "Sign In as Admin", new_auser_session_path %>
+
     <!-- **************If user already signed in then only show sign out option *************-->
 
     <% if auser_signed_in? %>
-      <%= link_to "A Sign Out",destroy_auser_session_path, :method => :delete %>
+      <%= link_to "Sign Out",destroy_auser_session_path, :method => :delete %>
     <% end %>
   </div>
 
 
-  <div align="right">
-  <%= link_to "R Sign Up", new_ruser_registration_path %>
-  <%= link_to "R Sign In", new_ruser_session_path %>
+  <div align="left">
+  <%= link_to "Sign up as a Recruiter", new_ruser_registration_path %>
+  <%= link_to "Sign in as a Recruiter", new_ruser_session_path %>
   <!-- **************If user already signed in then only show sign out option *************-->
 
   <% if ruser_signed_in? %>
-    <%= link_to "R Sign Out",destroy_ruser_session_path, :method => :delete %>
+    <%= link_to "Sign Out",destroy_ruser_session_path, :method => :delete %>
   <% end %>
   </div>
 
@@ -53,8 +57,16 @@
     <%= yield %>
   <br> <br> <br>
 
-  <%= link_to "List all Recruiters", recruiters_url %> <%= link_to "Show all Job Seekers", job_seekers_url %>
-  <%= link_to "List all Companies", companies_url %> <%= link_to "List all applications", applications_url %>
+  <!--
+  <%= link_to "List all Recruiters", recruiters_url %>
+  <br>
+  <%= link_to "Show all Job Seekers", job_seekers_url %>
+  <br>
+  <%= link_to "List all Companies", companies_url %>
+  <br>
+  <%= link_to "List all applications", applications_url %>
+  <br>
   <%= link_to "List all Jobs", jobs_url %>
+  -->
   </body>
 </html>
