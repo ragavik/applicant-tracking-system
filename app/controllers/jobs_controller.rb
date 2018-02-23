@@ -4,7 +4,11 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    if params[:search]
+      @jobs = Job.search(params[:search])
+    else
+      @jobs = Job.all
+    end
   end
 
   # GET /jobs/1
@@ -12,18 +16,29 @@ class JobsController < ApplicationController
   def show
   end
 
+  # TODO: show error message when job seeker tries to edit/delete/create jobs
+
   # GET /jobs/new
   def new
+    if current_ruser == nil
+      redirect_to action: :index
+    end
     @job = Job.new
   end
 
   # GET /jobs/1/edit
   def edit
+    if current_ruser == nil
+      redirect_to action: :index
+    end
   end
 
   # POST /jobs
   # POST /jobs.json
   def create
+    if current_ruser == nil
+      redirect_to action: :index
+    end
     @job = Job.new(job_params)
 
     respond_to do |format|
@@ -40,6 +55,9 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
+    if current_ruser == nil
+      redirect_to action: :index
+    end
     respond_to do |format|
       if @job.update(job_params)
         format.html { redirect_to @job, notice: 'Job was successfully updated.' }
@@ -54,10 +72,14 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
+    if current_ruser == nil
+      redirect_to action: :index
+    else
     @job.destroy
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
+    end
     end
   end
 
@@ -69,6 +91,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :employment_type, :requirements, :responsibilities)
+      params.require(:job).permit(:title, :description, :employment_type, :requirements, :responsibilities, :company_id, :recruiter_id)
     end
 end
