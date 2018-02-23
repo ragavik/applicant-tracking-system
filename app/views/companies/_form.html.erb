@@ -23,12 +23,66 @@
 
   <div class="field">
     <%= form.label :headquarters %>
-    <%= form.text_field :headquarters, id: :company_headquarters %>
+    <%= form.select :headquarters, ["Alaska",
+                                     "Alabama",
+                                     "Arkansas",
+                                     "American Samoa",
+                                     "Arizona",
+                                     "California",
+                                     "Colorado",
+                                     "Connecticut",
+                                     "District of Columbia",
+                                     "Delaware",
+                                     "Florida",
+                                     "Georgia",
+                                     "Guam",
+                                     "Hawaii",
+                                     "Iowa",
+                                     "Idaho",
+                                     "Illinois",
+                                     "Indiana",
+                                     "Kansas",
+                                     "Kentucky",
+                                     "Louisiana",
+                                     "Massachusetts",
+                                     "Maryland",
+                                     "Maine",
+                                     "Michigan",
+                                     "Minnesota",
+                                     "Missouri",
+                                     "Mississippi",
+                                     "Montana",
+                                     "North Carolina",
+                                     " North Dakota",
+                                     "Nebraska",
+                                     "New Hampshire",
+                                     "New Jersey",
+                                     "New Mexico",
+                                     "Nevada",
+                                     "New York",
+                                     "Ohio",
+                                     "Oklahoma",
+                                     "Oregon",
+                                     "Pennsylvania",
+                                     "Puerto Rico",
+                                     "Rhode Island",
+                                     "South Carolina",
+                                     "South Dakota",
+                                     "Tennessee",
+                                     "Texas",
+                                     "Utah",
+                                     "Virginia",
+                                     "Virgin Islands",
+                                     "Vermont",
+                                     "Washington",
+                                     "Wisconsin",
+                                     "West Virginia",
+                                     "Wyoming"], id: :company_headquarters %>
   </div>
 
   <div class="field">
     <%= form.label :size %>
-    <%= form.text_field :size, id: :company_size %>
+    <%= form.select :size, ['1-50', '51-200', '201-500', '501-1000', '1000+'], id: :company_size %>
   </div>
 
   <div class="field">
@@ -38,7 +92,7 @@
 
   <div class="field">
     <%= form.label :industry %>
-    <%= form.text_field :industry, id: :company_industry %>
+    <%= form.select :industry, ['Software', 'Hardware', 'Automobile', 'Textile', 'Other'], id: :company_industry%>
   </div>
 
   <div class="field">
