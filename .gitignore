@@ -17,3 +17,7 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignoring .idea files
+.idea/workspace.xml
+.idea/Recruiting and Applicant Tracking System.iml
