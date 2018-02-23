@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 # gem 'pg', '~> 0.18'
-gem 'sqlite3'
+##### gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -56,3 +56,11 @@ gem 'coffee-script-source' , '1.8.0'
 gem 'devise'
 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
