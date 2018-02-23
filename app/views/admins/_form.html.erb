@@ -16,6 +16,8 @@
     <%= form.text_field :name, id: :admin_name %>
   </div>
 
+  <input type="hidden" id="admin_auser_id" name="admin[auser_id]" value="<%= current_auser.id%>" />
+
   <div class="actions">
     <%= form.submit %>
   </div>
