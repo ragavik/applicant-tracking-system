@@ -1,14 +1,42 @@
+<hr>
+<br>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @job_seeker.name %>
-</p>
+<h2>Job Seeker Homepage</h2>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @job_seeker.phone %>
-</p>
+<%
+  user_id = @job_seeker.user_id
+%>
 
-<%= link_to 'Edit', edit_job_seeker_path(@job_seeker) %> |
-<%= link_to 'Back', job_seekers_path %>
+<br>
+<h3>Your Profile</h3>
+<ul>
+  <li><strong>Name: </strong><%= @job_seeker.name %></li>
+  <li><strong>Phone: </strong><%= @job_seeker.phone %> </li>
+  <li><strong>Email: </strong><%= User.find(params[:id]).email %></li>
+</ul>
+
+<br>
+<h3>Take Action</h3>
+<ul>
+  <li><%= link_to 'Edit My Profile', edit_job_seeker_path(@job_seeker) %></li>
+  <!--<li><%= link_to 'Search For Jobs', jobs_url %></li>-->
+</ul>
+<!--<%= link_to 'Back', job_seekers_path %>-->
+
+<br>
+<h3>Search Jobs</h3>
+Company: <%= select_tag 'Company', options_for_select(Company.all.collect{ |c| [ c.name, c.id] })%>
+<br>
+Industry:
+<br>
+Company Size:
+<br>
+Location:
+<br>
+<br>
+
+
+<br>
+<br>
+<hr>
