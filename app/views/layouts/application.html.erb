@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecruitingAndApplicantTrackingSystem</title>
+    <title>Recruiting And Applicant Tracking System</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,7 @@
   </head>
 
   <body>
+
 
   <div align="center">
   <h1>Recruiting And Applicant Tracking System </h1>
@@ -19,6 +20,9 @@
   <p class="alert"><%= alert %></p>
 
   <br><br>
+
+  <% if current_page?(root_url) %>
+
   <div align="left">
   <%= link_to "Sign up as a Job Seeker", new_user_registration_path %>
   <%= link_to "Sign in as a Job Seeker", new_user_session_path %>
@@ -40,8 +44,6 @@
       <%= link_to "Sign Out",destroy_auser_session_path, :method => :delete %>
     <% end %>
   </div>
-
-
   <div align="left">
   <%= link_to "Sign up as a Recruiter", new_ruser_registration_path %>
   <%= link_to "Sign in as a Recruiter", new_ruser_session_path %>
@@ -51,9 +53,7 @@
     <%= link_to "Sign Out",destroy_ruser_session_path, :method => :delete %>
   <% end %>
   </div>
-
   <br> <br> <br>
-
     <%= yield %>
   <br> <br> <br>
 
@@ -68,5 +68,49 @@
   <br>
   <%= link_to "List all Jobs", jobs_url %>
   -->
+  <% end %>
   </body>
+
+  <% if current_page?('/users/sign_up') %>
+  <%= render file: "/app/views/devise/registrations/new" %>
+  <% end %>
+
+
+  <% if current_page?('/users/sign_in') %>
+  <%= render file: "/app/views/devise/sessions/new" %>
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out",destroy_user_session_path, :method => :delete %>
+    <% end %>
+  <% end %>
+
+
+  <% if current_page?('/ausers/sign_in') %>
+  <%= render file: "/app/views/devise/sessions/new" %>
+    <% if auser_signed_in? %>
+      <%= link_to "Sign Out",destroy_auser_session_path, :method => :delete %>
+    <% end %>
+  <% end %>
+
+
+  <% if current_page?('/rusers/sign_up') %>
+  <%= render file: "/app/views/devise/registrations/new" %>
+  <% end %>
+
+
+  <% if current_page?('/rusers/sign_in') %>
+  <%= render file: "/app/views/devise/sessions/new" %>
+  <% if ruser_signed_in? %>
+    <%= link_to "Sign Out",destroy_ruser_session_path, :method => :delete %>
+  <% end %>
+  <% end %>
+
+  <% if current_page?('/rusers/password/new') %>
+  <%= render file: "/app/views/devise/passwords/new" %>
+  <% end %>
+  <% if current_page?('/users/password/new') %>
+  <%= render file: "/app/views/devise/passwords/new" %>
+<% end %>
+<% if current_page?('/ausers/password/new') %>
+  <%= render file: "/app/views/devise/passwords/new" %>
+<% end %>
 </html>
