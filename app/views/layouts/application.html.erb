@@ -19,19 +19,49 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+    <% if params['controller'] == 'static_pages'
+         if current_auser != nil
+           auser_id = current_auser.id
+           if Admin.find_by_auser_id(auser_id) == nil
+             controller.redirect_to new_admin_path
+           else
+             a_id = Admin.find_by_auser_id(auser_id).id
+             controller.redirect_to admin_url(a_id)
+           end
+
+        elsif current_ruser != nil
+          ruser_id = current_ruser.id
+          if Recruiter.find_by_ruser_id(ruser_id) == nil
+            controller.redirect_to new_recruiter_path
+          else
+            rs_id = Recruiter.find_by_ruser_id(ruser_id).id
+            controller.redirect_to recruiter_url(rs_id)
+          end
+        elsif current_user != nil
+          user_id = current_user.id
+          if JobSeeker.find_by_user_id(user_id) == nil
+            controller.redirect_to new_job_seeker_path
+          else
+            js_id = JobSeeker.find_by_user_id(user_id).id
+            controller.redirect_to job_seeker_url(js_id)
+          end
+        end
+    end
+  %>
+
   <br><br>
 
   <% if current_page?(root_url) %>
 
   <div align="left">
-  <%= link_to "Sign up as a Job Seeker", new_user_registration_path %>
+  <%= link_to "Sign up as a Job Seeker", new_user_registration_path %> |
   <%= link_to "Sign in as a Job Seeker", new_user_session_path %>
   <!-- **************If user already signed in then only show sign out option ***********-->
   <% if user_signed_in? %>
-    <%= link_to "Sign Out",destroy_user_session_path, :method => :delete %>
+     | <%= link_to "Sign Out",destroy_user_session_path, :method => :delete %>
   <% end %>
   </div>
-
+<br>
   <div align="left">
     <!--
     <%= link_to "A Sign Up", new_auser_registration_path %>
@@ -44,13 +74,17 @@
       <%= link_to "Sign Out",destroy_auser_session_path, :method => :delete %>
     <% end %>
   </div>
+
+
+<br>
+
   <div align="left">
-  <%= link_to "Sign up as a Recruiter", new_ruser_registration_path %>
+  <%= link_to "Sign up as a Recruiter", new_ruser_registration_path %> |
   <%= link_to "Sign in as a Recruiter", new_ruser_session_path %>
   <!-- **************If user already signed in then only show sign out option *************-->
 
   <% if ruser_signed_in? %>
-    <%= link_to "Sign Out",destroy_ruser_session_path, :method => :delete %>
+     | <%= link_to "Sign Out",destroy_ruser_session_path, :method => :delete %>
   <% end %>
   </div>
   <br> <br> <br>

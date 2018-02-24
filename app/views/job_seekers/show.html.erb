@@ -27,7 +27,6 @@
 <br>
 <h3>Search Jobs</h3>
 Company: <%= select_tag 'Company', options_for_select(Company.all.collect{ |c| [ c.name, c.id] })%>
-<!-- TODO: search jobs from any company -->
 <br>
 Industry:
 <br>
@@ -35,9 +34,18 @@ Company Size:
 <br>
 Location:
 <br>
+<input type = "button" value = "Search" onclick = "searchJobs()">
 <br>
 
 
 <br>
 <br>
 <hr>
+
+<script>
+  function searchJobs() {
+      var select = document.getElementById('Company');
+      var company_id = select.options[select.selectedIndex].value;
+
+  }
+</script>
