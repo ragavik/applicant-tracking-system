@@ -112,7 +112,6 @@
     </column>
     <index id="38" parent="7" name="index_applications_on_job_seeker_id">
       <ColNames>job_seeker_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="39" parent="7">
       <ColNames>id</ColNames>
@@ -140,7 +139,6 @@
     <index id="44" parent="8" name="sqlite_autoindex_ar_internal_metadata_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>key</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="45" parent="8">
@@ -212,12 +210,10 @@
     </column>
     <index id="59" parent="9" name="index_ausers_on_email">
       <ColNames>email</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="60" parent="9" name="index_ausers_on_reset_password_token">
       <ColNames>reset_password_token</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="61" parent="9">
@@ -354,11 +350,9 @@
     </column>
     <index id="91" parent="12" name="index_jobs_on_company_id">
       <ColNames>company_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="92" parent="12" name="index_jobs_on_recruiter_id">
       <ColNames>recruiter_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="93" parent="12">
       <ColNames>id</ColNames>
@@ -394,7 +388,6 @@
     </column>
     <index id="100" parent="13" name="index_recruiters_on_company_id">
       <ColNames>company_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="101" parent="13">
       <ColNames>id</ColNames>
@@ -464,12 +457,10 @@
     </column>
     <index id="115" parent="14" name="index_rusers_on_email">
       <ColNames>email</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="116" parent="14" name="index_rusers_on_reset_password_token">
       <ColNames>reset_password_token</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="117" parent="14">
@@ -484,7 +475,6 @@
     <index id="119" parent="15" name="sqlite_autoindex_schema_migrations_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="120" parent="15">
@@ -582,12 +572,10 @@
     </column>
     <index id="141" parent="18" name="index_users_on_email">
       <ColNames>email</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="142" parent="18" name="index_users_on_reset_password_token">
       <ColNames>reset_password_token</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="143" parent="18">

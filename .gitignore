@@ -19,6 +19,7 @@
 .byebug_history
 
 # Ignoring .idea files
+.idea
 .idea/workspace.xml
 .idea/Recruiting and Applicant Tracking System.iml  
 .idea/Applicant-Tracking-System-.iml
