@@ -5,5 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#Auser.create!([{email: 'admin1@admin.com' , password: 'admin123', password_confirmation: 'admin123'}])
+Auser.create!([{email: 'admin1@admin.com' , password: 'admin123', password_confirmation: 'admin123'}])
 Admin.create!(name: 'admin1', auser_id: 1)
