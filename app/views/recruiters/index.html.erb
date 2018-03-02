@@ -18,7 +18,7 @@
       <td><%= recruiter.ruser.email %></td>
       <td><%= link_to 'Show', recruiter %></td>
 
-      <% if recruiter.ruser == current_ruser %>
+      <% if recruiter.ruser == current_ruser || auser_signed_in? %>
         <td><%= link_to 'Edit', edit_recruiter_path(recruiter) %></td>
         <td><%= link_to 'Destroy', recruiter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>

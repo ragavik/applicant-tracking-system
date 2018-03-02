@@ -20,7 +20,7 @@
       <td><%= job_seeker.user.email %></td>
       <td><%= link_to 'Show', job_seeker %></td>
 
-      <% if job_seeker.user == current_user %>
+      <% if job_seeker.user == current_user || auser_signed_in? %>
         <td><%= link_to 'Edit', edit_job_seeker_path(job_seeker) %></td>
         <td><%= link_to 'Destroy', job_seeker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
