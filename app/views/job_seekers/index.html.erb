@@ -4,31 +4,31 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @job_seekers.each do |job_seeker| %>
-      <tr>
-        <td><%= job_seeker.name %></td>
-        <td><%= job_seeker.phone %></td>
-        <td><%= job_seeker.user.email %></td>
-        <td><%= link_to 'Show', job_seeker %></td>
+  <% @job_seekers.each do |job_seeker| %>
+    <tr>
+      <td><%= job_seeker.name %></td>
+      <td><%= job_seeker.phone %></td>
+      <td><%= job_seeker.user.email %></td>
+      <td><%= link_to 'Show', job_seeker %></td>
 
-        <% if job_seeker.user == current_user %>
+      <% if job_seeker.user == current_user %>
         <td><%= link_to 'Edit', edit_job_seeker_path(job_seeker) %></td>
         <td><%= link_to 'Destroy', job_seeker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
+      <% end %>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Job Seeker', new_job_seeker_path %>
+<!--<%= link_to 'New Job Seeker', new_job_seeker_path %>-->

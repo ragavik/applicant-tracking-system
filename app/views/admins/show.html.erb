@@ -1,9 +1,37 @@
 <p id="notice"><%= notice %></p>
 
+<hr>
+<br>
+<h2>Admin Homepage</h2>
+<br>
+<h3>Your Profile</h3>
 <p>
   <strong>Name:</strong>
   <%= @admin.name %>
 </p>
 
-<%= link_to 'Edit', edit_admin_path(@admin) %> |
-<%= link_to 'Back', admins_path %>
+<br>
+<h3>Actions</h3>
+<ul>
+  <li><%= link_to 'Edit My Profile', edit_admin_path(@admin) %></li>
+  <br>
+  <li><%= link_to 'Create Company', new_company_path %></li>
+  <br>
+  <li><%= link_to 'Show All Recruiters', recruiters_path %></li>
+  <br>
+  <li><%= link_to 'Show All Job Seekers', job_seekers_path %></li>
+  <br>
+  <li><%= link_to 'New Recruiter', new_recruiter_path %></li>
+  <br>
+  <li><%= link_to 'New Job Seeker', new_job_seeker_path %></li>
+  <br>
+  <li><%= link_to 'Show All Companies', companies_path %></li>
+  <br>
+  <li><%= link_to "Show All Jobs", jobs_url %></li>
+  <br>
+  <li><%= link_to "Show All Applications", applications_url %></li>
+</ul>
+<!-- <%= link_to 'Back', admins_path %> -->
+<br>
+<br>
+<hr>

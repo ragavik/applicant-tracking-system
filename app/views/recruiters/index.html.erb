@@ -4,29 +4,29 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @recruiters.each do |recruiter| %>
-      <tr>
-        <td><%= recruiter.name %></td>
-        <td><%= recruiter.ruser.email %></td>
-        <td><%= link_to 'Show', recruiter %></td>
+  <% @recruiters.each do |recruiter| %>
+    <tr>
+      <td><%= recruiter.name %></td>
+      <td><%= recruiter.ruser.email %></td>
+      <td><%= link_to 'Show', recruiter %></td>
 
-        <% if recruiter.ruser == current_ruser %>
+      <% if recruiter.ruser == current_ruser %>
         <td><%= link_to 'Edit', edit_recruiter_path(recruiter) %></td>
         <td><%= link_to 'Destroy', recruiter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
+      <% end %>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Recruiter', new_recruiter_path %>
+<!--<%= link_to 'New Recruiter', new_recruiter_path %>-->
