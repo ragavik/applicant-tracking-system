@@ -23,7 +23,6 @@
         <td><%= job.employment_type %></td>
         <td><%= job.requirements %></td>
         <td><%= job.responsibilities %></td>
-        <td><%= Recruiter.find(job.recruiter_id).name %></td>
         <td><%= link_to 'Show', job %></td>
         <% if (ruser_signed_in? && Recruiter.find_by_ruser_id(current_ruser.id).id == job.recruiter_id) %>
           <td><%= link_to 'Edit', edit_job_path(job) %></td>
