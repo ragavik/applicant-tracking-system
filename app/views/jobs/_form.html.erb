@@ -41,7 +41,7 @@
     <%= select("job", "company_id", Company.all.collect{ |c| [ c.name, c.id] }) %>
   </div>
 
-  <input type="hidden" id="job_recruiter_id" name="job[recruiter_id]" value="<%= current_ruser.id%>" />
+  <input type="hidden" id="job_recruiter_id" name="job[recruiter_id]" value="<%= Recruiter.find_by_ruser_id(current_ruser.id).id %>" />
 
   <div class="actions">
     <%= form.submit %>

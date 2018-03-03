@@ -72,7 +72,7 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
-    if current_ruser == nil
+    if current_ruser == nil && current_auser == nil
       redirect_to action: :index
     else
     @job.destroy
