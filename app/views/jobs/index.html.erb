@@ -23,10 +23,14 @@
         <td><%= job.employment_type %></td>
         <td><%= job.requirements %></td>
         <td><%= job.responsibilities %></td>
-        <td><%= job.recruiter_id %></td>
+        <td><%= Recruiter.find(job.recruiter_id).name %></td>
         <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if (ruser_signed_in? && Recruiter.find_by_ruser_id(current_ruser.id).id == job.recruiter_id) %>
+          <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <% end %>
+        <% if (auser_signed_in?) || (ruser_signed_in? && Recruiter.find_by_ruser_id(current_ruser.id).id == job.recruiter_id) %>
+          <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Job', new_job_path %>
+<!-- <%= link_to 'New Job', new_job_path %> -->
