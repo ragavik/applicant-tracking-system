@@ -13,6 +13,8 @@
 <h3>Take Actions</h3>
 <%= link_to 'Edit My Profile', edit_recruiter_path(@recruiter) %>
 <br><br>
+<%= link_to "Change your password", edit_ruser_registration_path %>
+<br><br>
 <%= link_to 'Edit My Company', edit_company_path(@recruiter.company_id) %>
 <br><br>
 <%= link_to 'Work for a new Company', new_company_path %>

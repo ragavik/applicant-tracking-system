@@ -15,6 +15,8 @@
     <%= form.label :name %>
     <%= form.text_field :name, id: :recruiter_name %>
   </div>
+
+
   <%= form.label :company_id %>
   <%= select("recruiter", "company_id", Company.all.collect{ |c| [ c.name, c.id] }) %>
 

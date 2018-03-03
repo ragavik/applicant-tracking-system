@@ -57,6 +57,8 @@ gem 'devise'
 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
+gem "rspec-rails", :group => [:development, :test]
+
 group :development, :test do
   gem 'sqlite3'
 end
