@@ -1,6 +1,6 @@
 class RecruitersController < ApplicationController
   before_action :set_recruiter, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_ruser!, except: [:index, :show]
+  before_action :authenticate_ruser!, except: [:index, :show, :destroy]
 
   #before_filter :check_for_existing_recruiter, only: [:new, :create]
 
